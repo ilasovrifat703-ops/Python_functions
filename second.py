@@ -1,8 +1,13 @@
-def fib_nums(n: int) -> int:
-    if n == 1 or n == 2:
-        return 1
-    else:
-        return fib_nums(n-1) + fib_nums(n-2)
+def factorials(n : int):
+    '''
 
-for i in range(1,20):
-    print(fib_nums(i))
+    :param n: число, до которого будем искать факториал чисел
+    :return: последовательный вывод вычисленного факториала для каждого числа
+    '''
+
+    if n == 1:
+        return 1
+
+    elif n > 1:
+        return factorials(n-1) * n
+
