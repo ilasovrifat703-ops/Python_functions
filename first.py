@@ -1,39 +1,23 @@
-string = input()
+string = input('Введите строку: ')
 
-def remove_alphs(data):
-    s = ''
-    for i in data:
-        if i in '(){}[]':
-            s+=i
-    return s
+only_brackets_str = ''
+for ch in string:
+    if ch in '()[]{}':
+        only_brackets_str+=ch
 
-def f(s,summ_1,summ_2,summ_3,old_str = '') -> str:
-    s = remove_alphs(s)
-    if s[0] == '(':
-        summ_1 += 1
-    elif s[0] == '{':
-        summ_2 += 1
-    elif s[0] == '[':
-        summ_3 += 1
-
-    elif s[0] == ')':
-        summ_1 -= 1
-    elif s[0] == '}':
-        summ_2 -=1
-    elif s[0] == ']':
-        summ_3 -= 1
-
-    old_str+=s[0]
-    if summ_3 == -1 or summ_2 == -1 or summ_1 == -1:
-        return False
-
-    if len(s) == 1 and s in ')]}':
+def check_brackets(string):
+    if not(string):
         return True
 
-    if len(s) == 1 and s not in ')]}':
-        return False
+    if '()' in string:
+        return check_brackets(string.replace('()','',1))
+    elif "[]" in string:
+        return check_brackets(string.replace("[]", "", 1))
+    elif "{}" in string:
+        return check_brackets(string.replace("{}", "", 1))
 
-    return f(s[1:],summ_1,summ_2,summ_3)
+    return False
+
+print(check_brackets(only_brackets_str))
 
 
-print(f(string,0,0,0))
