@@ -3,7 +3,7 @@ string = input('Введите строку: ')
 only_brackets_str = ''
 for ch in string:
     if ch in '()[]{}':
-        only_brackets_str+=ch
+        only_brackets_str += ch
 
 def check_brackets(string: str) -> str:
     '''
@@ -17,9 +17,9 @@ def check_brackets(string: str) -> str:
 
     if '()' in string:
         return check_brackets(string.replace('()','',1))
-    elif "[]" in string:
+    if "[]" in string:
         return check_brackets(string.replace("[]", "", 1))
-    elif "{}" in string:
+    if "{}" in string:
         return check_brackets(string.replace("{}", "", 1))
 
     return 'Неправильно'
