@@ -1,13 +1,18 @@
-def factorials(n : int):
+number = int(input('Введите число: '))
+
+def find_fib(n : int) -> int:
+    '''
+    Поиск запрошенного ряда Фибоначчи
+    :param n: номер запрошенного ряда Фибоначчи
+    :return: вывод заропшенный элемент ряда Фибоначчи
     '''
 
-    :param n: число, до которого будем искать факториал чисел
-    :return: последовательный вывод вычисленного факториала для каждого числа
-    '''
-
-    if n == 1:
+    if n == 0 or n == 1:
         return 1
 
-    elif n > 1:
-        return factorials(n-1) * n
+    if n > 1:
+        return (find_fib(n-1) + find_fib(n-2))
 
+result = find_fib(number)
+
+print(f'Полученное число: {result}')
