@@ -16,7 +16,7 @@ def check_brackets(string: str) -> str:
         return 'Правильно'
 
     if '()' in string:
-        return check_brackets(string.replace('()','',1))
+        return check_brackets(string.replace('()',"",1))
     if "[]" in string:
         return check_brackets(string.replace("[]", "", 1))
     if "{}" in string:
