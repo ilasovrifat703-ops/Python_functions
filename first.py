@@ -15,12 +15,10 @@ def check_brackets(string: str) -> str:
     if not(string):
         return 'Правильно'
 
-    if '()' in string:
-        return check_brackets(string.replace('()',"",1))
-    if "[]" in string:
-        return check_brackets(string.replace("[]", "", 1))
-    if "{}" in string:
-        return check_brackets(string.replace("{}", "", 1))
+    for pair in ['()','{}','[]']:
+        if pair in string:
+            new_string = string.replace(pair,'',1)
+            return check_brackets(new_string)
 
     return 'Неправильно'
 
