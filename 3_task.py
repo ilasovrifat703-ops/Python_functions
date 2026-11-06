@@ -11,7 +11,7 @@ def find_abbrs(text):
     '''
 
     path = r'\b[A-ZА-Я]{2,6}\b'
-    result = findall(path,text)
+    result = findall(path, text)
 
     return result
 
