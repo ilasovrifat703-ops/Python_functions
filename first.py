@@ -17,9 +17,11 @@ def check_brackets(string: str) -> str:
 
     for pair in ['()','{}','[]']:
         if pair in string:
-            new_string = string.replace(pair,'',1)
+            new_string = string.replace(pair, '', 1)
             return check_brackets(new_string)
 
     return 'Неправильно'
+    
+result = check_brackets(only_brackets_str)
 
-print(f'Скобки расставлены {check_brackets(only_brackets_str)}')
+print(f'Скобки расставлены {result}')
