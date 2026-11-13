@@ -3,7 +3,7 @@ from re import findall
 
 string = input('Введите строку: ')
 
-def find_abbrs(text):
+def find_abbrs(text: str) -> list:
     '''
     Нахождение всех аббревиатур (до 6 символов) в тексте
     :param text: текст, в котором идет поиск аббревиатур
